@@ -17,6 +17,9 @@ if [ $# -eq 1  ]
 fi
 git commit -m "$msg"
 
+git config user.name "$GIT_NAME"
+git config user.email "$GIT_EMAIL"
+
 # Push source and build repos.
 git push origin master
 
