@@ -7,6 +7,10 @@ hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
 cd public
+
+git config user.name "$GIT_NAME"
+git config user.email "$GIT_EMAIL"
+
 # Add changes to git.
 git add -A .
 
@@ -16,9 +20,6 @@ if [ $# -eq 1  ]
       then msg="$1"
 fi
 git commit -m "$msg"
-
-git config user.name "$GIT_NAME"
-git config user.email "$GIT_EMAIL"
 
 # Push source and build repos.
 git push origin master
