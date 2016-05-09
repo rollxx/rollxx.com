@@ -1,6 +1,6 @@
 [submodule "themes/hugo-agency-theme"]
 	path = themes/hugo-agency-theme
-	url = git@github.com:digitalcraftsman/hugo-agency-theme.git
+    url = https://github.com/digitalcraftsman/hugo-agency-theme.git
 [submodule "public"]
 	path = public
 	url = git@github.com:rollxx/rollxx.github.io.git
