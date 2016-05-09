@@ -7,7 +7,7 @@ hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
 cd public
-
+git checkout master
 git remote add ssh git@github.com:rollxx/rollxx.github.io.git
 
 git config user.name "$GIT_NAME"
