@@ -8,10 +8,8 @@ hugo # if using a theme, replace by `hugo -t <yourtheme>`
 # Go To Public folder
 cd public
 
-if [[ -z "${GIT_EMAIL}"]]; then
-    git config user.name "$GIT_NAME"
-    git config user.email "$GIT_EMAIL"
-fi
+git config user.name "$GIT_NAME"
+git config user.email "$GIT_EMAIL"
 
 
 # Add changes to git.
