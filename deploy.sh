@@ -32,8 +32,8 @@ git push ssh $DEPLOY_BRANCH
 cd ..
 
 # cleanup claoudflare cache
-curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$cloudflare-zone/purge_cache" \
--H "X-Auth-Email: $cloudflare-email" \
--H "X-Auth-Key: $cloudflare-api-key" \
+curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone/purge_cache" \
+-H "X-Auth-Email: $cloudflare_email" \
+-H "X-Auth-Key: $cloudflare_api_key" \
 -H "Content-Type: application/json" \
 --data '{"purge_everything":true}'
