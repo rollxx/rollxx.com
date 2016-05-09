@@ -17,4 +17,5 @@ script:
     - hugo
 
 after_success:
+    - ssh-add id_rsa_github
     - ./deploy.sh
