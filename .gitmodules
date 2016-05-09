@@ -3,5 +3,5 @@
     url = https://github.com/digitalcraftsman/hugo-agency-theme.git
 [submodule "public"]
 	path = public
-    branch = master
+	branch = master
 	url = https://github.com/rollxx/rollxx.github.io.git
