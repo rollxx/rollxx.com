@@ -2,21 +2,19 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# force master branch in public directory
-cd public
-git checkout --force master
+# prepare the directory with generated files
+cd $SOURCE_DIR
+git checkout --force $DEPLOY_BRANCH
+git remote add ssh git@github.com:rollxx/rollxx.github.io.git
+git config user.name "$GIT_NAME"
+git config user.email "$GIT_EMAIL"
 cd ..
 
 # Build the project.
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
-cd public
-git checkout master
-git remote add ssh git@github.com:rollxx/rollxx.github.io.git
-
-git config user.name "$GIT_NAME"
-git config user.email "$GIT_EMAIL"
+cd $SOURCE_DIR
 
 # Add changes to git.
 git add -A :/
@@ -29,7 +27,6 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git push ssh master
+git push ssh $DEPLOY_BRANCH
 
-# Come Back
 cd ..
