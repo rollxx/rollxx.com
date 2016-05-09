@@ -12,9 +12,9 @@ env:
 
 before_install:
     - openssl aes-256-cbc -K $encrypted_c9ce2f6b7e47_key -iv $encrypted_c9ce2f6b7e47_iv -in id_rsa_github.enc -out id_rsa_github -d
-    - chmod 600 id_rsa_github
+    - chmod 600 $SSH_KEY
     - eval `ssh-agent -s`
-    - ssh-add id_rsa_github
+    - ssh-add $SSH_KEY
 
 script:
     - hugo
