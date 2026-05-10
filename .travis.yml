@@ -1,6 +1,4 @@
-language: go
-
-install: go get -v github.com/spf13/hugo
+language: minimal
 
 env:
     global:
@@ -15,9 +13,10 @@ before_install:
     - chmod 600 $SSH_KEY
     - eval `ssh-agent -s`
     - ssh-add $SSH_KEY
+    - git submodule update --init public
 
 script:
-    - hugo
+    - cp -r static/. public/
 
 after_success:
     - ./deploy.sh
