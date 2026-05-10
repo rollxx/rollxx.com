@@ -10,7 +10,7 @@ git config user.email "$GIT_EMAIL"
 git add -A
 msg="deploy $(date)"
 if [ $# -eq 1 ]; then msg="$1"; fi
-git commit -m "$msg"
+git diff --staged --quiet || git commit -m "$msg"
 git push ssh $DEPLOY_BRANCH
 
 cd ..
